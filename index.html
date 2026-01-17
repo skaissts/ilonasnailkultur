@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Premium Nail Salon in Vienna - Gel-Maniküre, professionelle Nagelpflege mit höchsten Hygienestandards" />
+  <title>Ilona's Nails Kulture — Premium Nail Studio Vienna</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header header--minimal" id="header">
+    <div class="container header__inner">
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <button class="nav__close" id="navClose" aria-label="Close menu">&times;</button>
+        <ul class="nav__list">
+          <li><a href="#services" class="nav__link" data-i18n="nav.services">Leistungen</a></li>
+          <li><a href="#about" class="nav__link" data-i18n="nav.about">Über mich</a></li>
+          <li><a href="#gallery" class="nav__link" data-i18n="nav.gallery">Galerie</a></li>
+          <li><a href="#contact" class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-dropdown__toggle" id="langToggle">
+          <span class="lang-dropdown__current" id="langCurrent">DE</span>
+          <svg class="lang-dropdown__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </button>
+        <div class="lang-dropdown__menu" id="langMenu">
+          <button class="lang-dropdown__item active" data-lang="de">Deutsch</button>
+          <button class="lang-dropdown__item" data-lang="ru">Русский</button>
+          <button class="lang-dropdown__item" data-lang="en">English</button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="brush-stroke brush-stroke--1"></div>
+      <div class="brush-stroke brush-stroke--2"></div>
+      <div class="brush-stroke brush-stroke--3"></div>
+    </div>
+    <div class="hero__content">
+      <img src="/logo.png" alt="Ilona's Nails Kulture" class="hero__logo animate-fade-up">
+      <a href="#booking" class="btn btn--primary animate-fade-up animate-delay-1" data-i18n="hero.cta">
+        Termin buchen
+      </a>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="philosophy section" id="philosophy">
+    <div class="container">
+      <div class="philosophy__content reveal-section">
+        <h2 class="section__title" data-i18n="philosophy.title">Unsere Philosophie</h2>
+        <div class="philosophy__text">
+          <p class="reveal-line" data-i18n="philosophy.text1">
+            Ich arbeite ausschließlich mit hochwertigen, sicheren und zertifizierten Materialien,
+            um Ihnen ein makelloses Ergebnis zu garantieren.
+          </p>
+          <p class="reveal-line" data-i18n="philosophy.text2">
+            Sterilität und Komfort sind meine obersten Prioritäten. Jedes Instrument wird nach
+            strengsten Hygienestandards sterilisiert.
+          </p>
+          <p class="reveal-line" data-i18n="philosophy.text3">
+            Die Preisanpassungen spiegeln die gestiegenen Kosten für Premium-Materialien wider,
+            um Ihnen weiterhin die beste Qualität bieten zu können.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services section" id="services">
+    <div class="container">
+      <h2 class="section__title reveal-section" data-i18n="services.title">Leistungen & Preise</h2>
+      <div class="services__grid">
+        <!-- Service 1 -->
+        <article class="service-card reveal-card">
+          <h3 class="service-card__title" data-i18n="services.item1.title">Maniküre mit Gel / Gellack</h3>
+          <div class="service-card__details">
+            <span class="service-card__duration">90 min</span>
+            <span class="service-card__price">65 €</span>
+          </div>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="service-card reveal-card">
+          <h3 class="service-card__title" data-i18n="services.item2.title">Klassische Maniküre</h3>
+          <div class="service-card__details">
+            <span class="service-card__duration">45 min</span>
+            <span class="service-card__price">35 €</span>
+          </div>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="service-card reveal-card">
+          <h3 class="service-card__title" data-i18n="services.item3.title">Maniküre + Gellack (verstärkt)</h3>
+          <div class="service-card__details">
+            <span class="service-card__duration">105 min</span>
+            <span class="service-card__price">75 €</span>
+          </div>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="service-card reveal-card">
+          <h3 class="service-card__title" data-i18n="services.item4.title">Altes Material entfernen</h3>
+          <div class="service-card__details">
+            <span class="service-card__duration">30 min</span>
+            <span class="service-card__price">20 €</span>
+          </div>
+        </article>
+
+        <!-- Service 5 -->
+        <article class="service-card reveal-card">
+          <h3 class="service-card__title" data-i18n="services.item5.title">Nagelreparatur (pro Nagel)</h3>
+          <div class="service-card__details">
+            <span class="service-card__duration">10 min</span>
+            <span class="service-card__price">5 €</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image reveal-left">
+          <div class="about__image-wrapper">
+            <img src="/photos/master/613599493_18504744505072669_4045642608086837183_n.jpg" alt="Ilona - Nail Artist"
+              id="masterImage">
+            <div class="about__image-decoration"></div>
+          </div>
+        </div>
+        <div class="about__content reveal-right">
+          <h2 class="section__title" data-i18n="about.title">Über mich</h2>
+          <h3 class="about__name" data-i18n="about.name">Ilona</h3>
+          <p class="about__text" data-i18n="about.text1">
+            Mit über 8 Jahren Erfahrung in der Nagelkunstbranche habe ich meine Leidenschaft
+            für Perfektion und Ästhetik zu meinem Beruf gemacht.
+          </p>
+          <p class="about__text" data-i18n="about.text2">
+            Jede Kundin ist einzigartig, und ich nehme mir die Zeit, Ihre Wünsche zu verstehen
+            und ein individuelles Ergebnis zu schaffen, das Ihre Persönlichkeit unterstreicht.
+          </p>
+          <p class="about__text" data-i18n="about.text3">
+            Mein Ziel ist es, Ihnen nicht nur wunderschöne Nägel zu schenken, sondern auch
+            einen Moment der Entspannung und Selbstpflege in angenehmer Atmosphäre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials Section -->
+  <section class="materials section" id="materials">
+    <div class="container">
+      <h2 class="section__title reveal-section" data-i18n="materials.title">Qualität & Sicherheit</h2>
+      <div class="materials__grid">
+        <div class="material-item reveal-zoom">
+          <div class="material-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12l2 2 4-4" />
+              <path d="M12 3a12 12 0 0 0 8.5 3 12 12 0 0 1-8.5 15 12 12 0 0 1-8.5-15 12 12 0 0 0 8.5-3" />
+            </svg>
+          </div>
+          <h3 class="material-item__title" data-i18n="materials.item1.title">Zertifizierte Produkte</h3>
+          <p class="material-item__text" data-i18n="materials.item1.text">
+            Nur geprüfte und zugelassene Materialien von renommierten Marken
+          </p>
+        </div>
+        <div class="material-item reveal-zoom">
+          <div class="material-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3 class="material-item__title" data-i18n="materials.item2.title">Sterilisation</h3>
+          <p class="material-item__text" data-i18n="materials.item2.text">
+            Alle Instrumente werden nach strengsten Hygienestandards sterilisiert
+          </p>
+        </div>
+        <div class="material-item reveal-zoom">
+          <div class="material-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+            </svg>
+          </div>
+          <h3 class="material-item__title" data-i18n="materials.item3.title">Ihre Sicherheit</h3>
+          <p class="material-item__text" data-i18n="materials.item3.text">
+            Ihr Wohlbefinden und Ihre Gesundheit haben für mich oberste Priorität
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <h2 class="section__title reveal-section" data-i18n="gallery.title">Meine Arbeiten</h2>
+      <div class="gallery__container">
+        <div class="gallery__track">
+          <!-- set 1 -->
+          <div class="gallery__item reveal-gallery">
+            <img src="/photos/gallery/468505326_18433648180072669_8250974653073569606_n.jpg" alt="Nail art 1"
+              loading="lazy">
+          </div>
+          <div class="gallery__item reveal-gallery">
+            <img src="/photos/gallery/468985020_18434673433072669_2623092983758262503_n.jpg" alt="Nail art 2"
+              loading="lazy">
+          </div>
+          <div class="gallery__item reveal-gallery">
+            <img src="/photos/gallery/469746295_18435935716072669_2651760842164982108_n.jpg" alt="Nail art 3"
+              loading="lazy">
+          </div>
+          <div class="gallery__item reveal-gallery">
+            <img src="/photos/gallery/470923819_18438358729072669_8264108225943305764_n.jpg" alt="Nail art 4"
+              loading="lazy">
+          </div>
+          <div class="gallery__item reveal-gallery">
+            <img src="/photos/gallery/472427252_18441116071072669_3477756139758143932_n.jpg" alt="Nail art 5"
+              loading="lazy">
+          </div>
+          <div class="gallery__item reveal-gallery">
+            <img src="/photos/gallery/472433684_18441116080072669_8907753207984493881_n.jpg" alt="Nail art 6"
+              loading="lazy">
+          </div>
+          <!-- set 2 (duplicate) -->
+          <div class="gallery__item">
+            <img src="/photos/gallery/468505326_18433648180072669_8250974653073569606_n.jpg" alt="Nail art 1"
+              loading="lazy">
+          </div>
+          <div class="gallery__item">
+            <img src="/photos/gallery/468985020_18434673433072669_2623092983758262503_n.jpg" alt="Nail art 2"
+              loading="lazy">
+          </div>
+          <div class="gallery__item">
+            <img src="/photos/gallery/469746295_18435935716072669_2651760842164982108_n.jpg" alt="Nail art 3"
+              loading="lazy">
+          </div>
+          <div class="gallery__item">
+            <img src="/photos/gallery/470923819_18438358729072669_8264108225943305764_n.jpg" alt="Nail art 4"
+              loading="lazy">
+          </div>
+          <div class="gallery__item">
+            <img src="/photos/gallery/472427252_18441116071072669_3477756139758143932_n.jpg" alt="Nail art 5"
+              loading="lazy">
+          </div>
+          <div class="gallery__item">
+            <img src="/photos/gallery/472433684_18441116080072669_8907753207984493881_n.jpg" alt="Nail art 6"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="booking section" id="booking">
+    <div class="container">
+      <div class="booking__content reveal-section">
+        <h2 class="section__title" data-i18n="booking.title">Termin buchen</h2>
+        <p class="booking__subtitle" data-i18n="booking.text">Vereinbaren Sie jetzt Ihren Wunschtermin — ich freue mich
+          auf Sie!</p>
+        <div class="booking__cards">
+          <a href="tel:+436641234567" class="booking-card booking-card--phone reveal-card">
+            <div class="booking-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1-2 2a16 16 0 0 1-15-15a2 2 0 0 1 2-2" />
+              </svg>
+            </div>
+            <h3 class="booking-card__title" data-i18n="booking.phone">Anrufen</h3>
+            <p class="booking-card__number">+43 664 123 4567</p>
+            <span class="booking-card__hint" data-i18n="booking.phoneHint">Jetzt direkt anrufen</span>
+          </a>
+          <a href="https://wa.me/436641234567" target="_blank" rel="noopener"
+            class="booking-card booking-card--whatsapp reveal-card">
+            <div class="booking-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </div>
+            <h3 class="booking-card__title">WhatsApp</h3>
+            <p class="booking-card__number" data-i18n="booking.whatsappText">Schreiben Sie mir</p>
+            <span class="booking-card__hint" data-i18n="booking.whatsappHint">Schnell & unkompliziert</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info reveal-left">
+          <h2 class="section__title" data-i18n="contact.title">Kontakt</h2>
+          <div class="contact__details">
+            <div class="contact__item contact__item--address">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" />
+              </svg>
+              <div class="contact__item-text">
+                <strong>Große Sperlgasse 36</strong>
+                <span>1020 Wien, Österreich</span>
+              </div>
+            </div>
+            <div class="contact__item contact__item--phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path
+                  d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1-2 2a16 16 0 0 1-15-15a2 2 0 0 1 2-2" />
+              </svg>
+              <div class="contact__item-text">
+                <strong>Telefon</strong>
+                <a href="tel:+436641234567">+43 664 123 4567</a>
+              </div>
+            </div>
+            <div class="contact__item contact__item--whatsapp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+              </svg>
+              <div class="contact__item-text">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/436641234567" target="_blank" rel="noopener">Jetzt schreiben</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact__map reveal-right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.8!2d16.3755!3d48.2199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d079b6c9f0001%3A0x1234567890abcdef!2sGro%C3%9Fe%20Sperlgasse%2036%2C%201020%20Wien%2C%20Austria!5e0!3m2!1sde!2sat!4v1704067200000!5m2!1sde!2sat"
+            width="100%" height="100%" style="border:0; border-radius: 24px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">
+        <span class="logo__text">Ilona's Nails Kulture</span>
+      </div>
+      <p class="footer__copy">© 2024 Ilona's Nails Kulture. <span data-i18n="footer.rights">Alle Rechte
+          vorbehalten.</span></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close"></button>
+    <img src="" alt="" class="lightbox__img" id="lightboxImg">
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
