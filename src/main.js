@@ -530,77 +530,113 @@ function initGalleryScroll() {
   if (!container || !track) return;
 
   // Clone items for infinite loop
-  // We need enough items to fill the screen + buffer
   const originalItems = Array.from(track.children);
 
-  // Clone twice to ensure smooth infinite scroll
-  originalItems.forEach(item => {
-    track.appendChild(item.cloneNode(true));
-  });
-  originalItems.forEach(item => {
-    track.appendChild(item.cloneNode(true));
-  });
+  // Clone enough times to ensure smooth scrolling without gaps
+  // 2 sets of clones is usually enough: [Original] [Clone1] [Clone2]
+  // We scroll through Original, then snap back to start of Original (which looks like start of Clone1)
+  // Actually, standard technique: [CloneBefore] [Original] [CloneAfter] or just [Original] [Clone1]
 
-  let scrollPos = 0;
+  // Let's do [Original] [Clone1] and reset when we hit end of Original.
+  // To be safe with wide screens, we might need more clones.
+  // Let's add 3 sets of clones to be safe.
+  originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+  originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+  originalItems.forEach(item => track.appendChild(item.cloneNode(true)));
+
+  let position = 0;
   let isDragging = false;
   let startX = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
+  let prevPos = 0;
   let animationID;
-  const speed = 0.5; // Auto-scroll speed
+  const speed = 0.8; // Slightly faster auto-scroll
+
+  // Calculate width of one set
+  const getSingleSetWidth = () => {
+    const item = originalItems[0];
+    if (!item) return 0;
+    const style = window.getComputedStyle(item);
+    const width = item.offsetWidth;
+    const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+    return (width + margin + gap) * originalItems.length;
+  };
+
+  let singleSetWidth = getSingleSetWidth();
+
+  // Update on resize
+  window.addEventListener('resize', () => {
+    singleSetWidth = getSingleSetWidth();
+  });
 
   function animate() {
     if (!isDragging) {
-      scrollPos += speed;
-      // Reset if we've scrolled past the first set width
-      // We estimate 1 set width is track.scrollWidth / 3
-      const totalWidth = track.scrollWidth;
-      const oneSetWidth = totalWidth / 3;
-
-      if (scrollPos >= oneSetWidth) {
-        scrollPos = 0;
-      }
-
-      container.scrollLeft = scrollPos;
+      position -= speed;
     }
+
+    // Infinite loop logic
+    // If we've scrolled past the first set (negative direction)
+    if (position <= -singleSetWidth) {
+      position += singleSetWidth;
+    }
+    // If we've dragged past the start (positive direction)
+    else if (position > 0) {
+      position -= singleSetWidth;
+    }
+
+    track.style.transform = `translateX(${position}px)`;
     animationID = requestAnimationFrame(animate);
   }
 
   // Start animation
   animationID = requestAnimationFrame(animate);
 
-  // Manual Interaction
-  container.addEventListener('touchstart', touchStart);
-  container.addEventListener('touchend', touchEnd);
-  container.addEventListener('touchmove', touchMove);
+  // Touch Events
+  container.addEventListener('touchstart', handleStart, { passive: true });
+  container.addEventListener('touchmove', handleMove, { passive: false });
+  container.addEventListener('touchend', handleEnd);
 
-  // Mouse events for desktop testing
-  container.addEventListener('mousedown', touchStart);
-  container.addEventListener('mouseup', touchEnd);
+  // Mouse Events
+  container.addEventListener('mousedown', handleStart);
+  container.addEventListener('mousemove', handleMove);
+  container.addEventListener('mouseup', handleEnd);
   container.addEventListener('mouseleave', () => {
-    if (isDragging) touchEnd();
+    if (isDragging) handleEnd();
   });
-  container.addEventListener('mousemove', touchMove);
 
-  function touchStart(index) {
+  function handleStart(e) {
     isDragging = true;
-    const event = index.type.includes('mouse') ? index : index.touches[0];
-    startX = event.pageX - container.offsetLeft;
-    // Sync current visual scroll position
-    scrollPos = container.scrollLeft;
+    startX = getX(e);
+    prevPos = position;
+    container.style.cursor = 'grabbing';
+    // Cancel animation to prevent fighting? 
+    // Actually we keep animating but skip auto-scroll update in the loop
   }
 
-  function touchEnd() {
-    isDragging = false;
-    // Resume animation from current position
-  }
+  function handleMove(e) {
+    if (!isDragging) return;
 
-  function touchMove(event) {
-    if (isDragging) {
-      const currentEvent = event.type.includes('mouse') ? event : event.touches[0];
-      const x = currentEvent.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2; // scroll-fast
-      container.scrollLeft = scrollPos - walk;
+    // Check if it's a touch event or mouse event
+    // For touch, we want to prevent default scroll if it's primarily horizontal
+    // but here we just prevent default to be safe for the carousel
+    if (e.type === 'touchmove') {
+      // e.preventDefault(); // Optional: prevent page scroll while dragging gallery
     }
+
+    const currentX = getX(e);
+    const diff = currentX - startX;
+    position = prevPos + diff;
+
+    // We don't update transform here, we let the animate loop do it
+    // but we updated 'position' which the loop uses.
+  }
+
+  function handleEnd() {
+    isDragging = false;
+    container.style.cursor = 'grab';
+  }
+
+  function getX(e) {
+    return e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
   }
 }

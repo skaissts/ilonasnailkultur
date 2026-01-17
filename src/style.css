@@ -33,10 +33,10 @@
   --space-3xl: 8rem;
 
   /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slower: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 1.0s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(212, 165, 165, 0.08);
@@ -146,12 +146,12 @@ button {
   letter-spacing: -0.02em;
 
   /* Shine Effect */
-  background: linear-gradient(120deg, var(--color-rose-dark) 0%, var(--color-rose-dark) 40%, #e8c4c4 50%, var(--color-rose-dark) 60%, var(--color-rose-dark) 100%);
+  background: linear-gradient(120deg, var(--color-rose-dark) 0%, var(--color-rose-dark) 40%, #ffffff 50%, var(--color-rose-dark) 60%, var(--color-rose-dark) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 6s linear infinite;
+  animation: shine 3s linear infinite;
 }
 
 @keyframes shine {
@@ -1345,12 +1345,12 @@ button {
 .nav.mobile-open .nav__list {
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   width: 100%;
 }
 
 .nav.mobile-open .nav__link {
-  font-size: 1.75rem;
+  font-size: 1.35rem;
   /* Larger font */
   font-family: var(--font-heading);
   font-weight: 500;
