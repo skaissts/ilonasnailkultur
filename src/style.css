@@ -69,6 +69,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -78,6 +80,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 img {
@@ -1423,19 +1426,32 @@ button {
 .hero__text {
   font-size: 1.1rem;
   letter-spacing: 0.05em;
-  color: var(--color-text);
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   margin-top: -1rem;
-  /* Pull it closer to logo */
   margin-bottom: var(--space-sm);
-  opacity: 0.9;
+
+  /* Rose Shimmer Effect */
+  background: linear-gradient(120deg, var(--color-rose-dark) 0%, var(--color-rose-dark) 40%, #ffffff 50%, var(--color-rose-dark) 60%, var(--color-rose-dark) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+  /* Slightly slower for elegance */
+
+  display: inline-block;
+  /* Required for transform/clip sometimes */
 }
 
 @media (max-width: 768px) {
   .hero__text {
     font-size: 0.9rem;
     margin-top: -0.5rem;
+    max-width: 80%;
+    /* Force line break */
+    line-height: 1.6;
+    padding: 0 1rem;
   }
 }
 
