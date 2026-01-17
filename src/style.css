@@ -1430,18 +1430,9 @@ button {
   text-transform: uppercase;
   margin-top: -1rem;
   margin-bottom: var(--space-sm);
-
-  /* Rose Shimmer Effect */
-  background: linear-gradient(120deg, var(--color-rose-dark) 0%, var(--color-rose-dark) 40%, #ffffff 50%, var(--color-rose-dark) 60%, var(--color-rose-dark) 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 4s linear infinite;
-  /* Slightly slower for elegance */
-
+  color: var(--color-rose-dark);
+  /* Solid color to ensure visibility */
   display: inline-block;
-  /* Required for transform/clip sometimes */
 }
 
 @media (max-width: 768px) {
