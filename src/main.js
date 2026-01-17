@@ -18,6 +18,7 @@ const translations = {
 
     // Hero
     'hero.title': 'Perfektion in jedem Detail',
+    'hero.text': 'Professionelle Maniküre & Nageldesign in Wien',
     'hero.subtitle': 'Exklusive Nagelpflege mit höchsten Qualitäts- und Hygienestandards in Wien',
     'hero.cta': 'Termin buchen',
 
@@ -60,6 +61,15 @@ const translations = {
     'contact.cta': 'Termin buchen',
     'contact.mapLabel': 'Wien, Österreich',
 
+    // Reviews
+    'reviews.title': 'Das sagen meine Kunden',
+    'reviews.item1.text': '"Ich bin absolut begeistert! Ilona arbeitet unglaublich präzise und sauber. Meine Nägel haben noch nie so gut ausgesehen und gehalten. Die Atmosphäre im Studio ist auch sehr entspannend."',
+    'reviews.item1.name': 'Elena S.',
+    'reviews.item2.text': '"Endlich habe ich jemanden gefunden, der mein Nageldesign genau so umsetzt, wie ich es mir vorstelle. Sehr große Auswahl an Farben und höchste Qualität. Absolute Empfehlung!"',
+    'reviews.item2.name': 'Julia M.',
+    'reviews.item3.text': '"Tolle Beratung und sehr liebevolle Behandlung. Man merkt, dass Ilona ihre Arbeit liebt. Alles ist sehr hygienisch und professionell. Ich komme gerne wieder!"',
+    'reviews.item3.name': 'Sophie K.',
+
     // Booking
     'booking.title': 'Termin buchen',
     'booking.text': 'Vereinbaren Sie jetzt Ihren Wunschtermin — ich freue mich auf Sie!',
@@ -81,6 +91,7 @@ const translations = {
 
     // Hero
     'hero.title': 'Совершенство в каждой детали',
+    'hero.text': 'Профессиональный маникюр и дизайн ногтей в Вене',
     'hero.subtitle': 'Эксклюзивный уход за ногтями с высочайшими стандартами качества и гигиены в Вене',
     'hero.cta': 'Записаться',
 
@@ -126,6 +137,15 @@ const translations = {
     // Footer
     'footer.rights': 'Все права защищены.',
 
+    // Reviews
+    'reviews.title': 'Отзывы клиентов',
+    'reviews.item1.text': '"Я в полном восторге! Илона работает невероятно точно и аккуратно. Мои ногти никогда не выглядели так хорошо. Атмосфера в студии очень расслабляющая."',
+    'reviews.item1.name': 'Елена С.',
+    'reviews.item2.text': '"Наконец-то я нашла мастера, который делает дизайн в точности так, как я хочу. Огромный выбор цветов и высочайшее качество. Искренне рекомендую!"',
+    'reviews.item2.name': 'Юлия М.',
+    'reviews.item3.text': '"Прекрасная консультация и очень внимательное отношение. Видно, что Илона любит свою работу. Всё очень гигиенично и профессионально. Обязательно вернусь!"',
+    'reviews.item3.name': 'София К.',
+
     // Booking
     'booking.title': 'Записаться',
     'booking.text': 'Запишитесь на прием прямо сейчас — буду рада вас видеть!',
@@ -144,6 +164,7 @@ const translations = {
 
     // Hero
     'hero.title': 'Perfection in Every Detail',
+    'hero.text': 'Professional Manicure & Nail Design in Vienna',
     'hero.subtitle': 'Exclusive nail care with the highest quality and hygiene standards in Vienna',
     'hero.cta': 'Book Appointment',
 
@@ -188,6 +209,15 @@ const translations = {
 
     // Footer
     'footer.rights': 'All rights reserved.',
+
+    // Reviews
+    'reviews.title': 'What My Clients Say',
+    'reviews.item1.text': '"I am absolutely delighted! Ilona works incredibly precisely and cleanly. My nails have never looked this good and lasted this long. The atmosphere in the studio is also very relaxing."',
+    'reviews.item1.name': 'Elena S.',
+    'reviews.item2.text': '"Finally found someone who creates the nail design exactly as I imagine it. Huge selection of colors and highest quality. Highly recommended!"',
+    'reviews.item2.name': 'Julia M.',
+    'reviews.item3.text': '"Great consultation and very loving treatment. You can tell that Ilona loves her work. Everything is very hygienic and professional. I will definitely be back!"',
+    'reviews.item3.name': 'Sophie K.',
 
     // Booking
     'booking.title': 'Book Appointment',
