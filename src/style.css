@@ -764,7 +764,7 @@ button {
   /* Animation removed for JS control */
   will-change: transform;
 }
-}
+
 
 @keyframes scroll {
   0% {
@@ -1415,4 +1415,78 @@ button {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* -------------------------
+   Hero Text
+   ------------------------- */
+.hero__text {
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: -1rem;
+  /* Pull it closer to logo */
+  margin-bottom: var(--space-sm);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .hero__text {
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+  }
+}
+
+/* -------------------------
+   Reviews Section
+   ------------------------- */
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  justify-content: center;
+}
+
+.review-card {
+  background: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform var(--transition-base);
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-pink-powder);
+}
+
+.review-card__stars {
+  color: #D4A5A5;
+  /* Use rose color directly or var */
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.review-card__text {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.review-card__author {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--color-rose-dark);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
 }
